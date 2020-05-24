@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    mq:
+        environment:
+            - LICENSE=accept
+            - MQ_QMGR_NAME=QM1
+            - MQ_APP_PASSWORD=_APP_PASSWORD_
+        ports:
+            - '1414:1414'
+            - '9443:9443'
+        volumes:
+            - 'qm1data:/mnt/mqm'
+        image: ibmcom/mq
+volumes:
+  qm1data:
